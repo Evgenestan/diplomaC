@@ -1,0 +1,27 @@
+#ifndef THIRDMESSAGE_H
+#define THIRDMESSAGE_H
+#include <ctime>
+
+
+struct ThirdMessageStruct{
+    double amplitude;
+    double rauge;
+    int idProbe;
+    int idD;
+    tm departureTime;
+};
+
+class ThirdMessage
+{
+public:
+    ThirdMessage();
+    ThirdMessage(double amplitude, double rauge, int idProbe, int idD, tm departureTime);
+    void setRandomData();
+    void setData(double amplitude, double rauge, int idProbe, int idD, tm departureTime);
+    ThirdMessageStruct getData();
+
+private:
+    ThirdMessageStruct thirdMessageStruct;
+};
+
+#endif // THIRDMESSAGE_H

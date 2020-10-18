@@ -1,0 +1,36 @@
+#include "thirdmessage.h"
+#include <cstdlib>
+#include <iostream>
+
+ThirdMessage::ThirdMessage(double amplitude, double rauge, int idProbe, int idD, tm departureTime)
+{
+    thirdMessageStruct.amplitude = amplitude;
+    thirdMessageStruct.rauge  = rauge;
+    thirdMessageStruct.idD  = idD;
+    thirdMessageStruct.idProbe = idProbe;
+    thirdMessageStruct.departureTime = departureTime;
+}
+
+void ThirdMessage::setRandomData()
+{
+    thirdMessageStruct.amplitude = rand();
+    thirdMessageStruct.rauge  = rand();
+    thirdMessageStruct.idD  = rand();
+    thirdMessageStruct.idProbe = rand();
+    time_t t = time(NULL);
+    localtime_s(&thirdMessageStruct.departureTime, &t);
+    
+
+}
+
+void ThirdMessage::setData(double amplitude, double rauge, int idProbe, int idD, tm departureTime){
+    thirdMessageStruct.amplitude = amplitude;
+    thirdMessageStruct.rauge  = rauge;
+    thirdMessageStruct.idD  = idD;
+    thirdMessageStruct.idProbe = idProbe;
+    thirdMessageStruct.departureTime = departureTime;
+}
+
+ThirdMessageStruct ThirdMessage::getData(){
+    return thirdMessageStruct;
+}
